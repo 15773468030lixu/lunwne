@@ -1,0 +1,92 @@
+<!--index.wxml-->
+<!--<loading hidden="{{!loading}}">
+	{{title}}
+</loading>-->
+<view class="container">
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <!--banner-->
+   <view class="swiper">
+      <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+              autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for-items="{{banner_url}}" wx:key="id">
+              <swiper-item>
+                <block wx:if="{{item}}">
+                  <image src="{{item}}"  mode="aspectFill"/>
+                </block>
+                <block wx:else>
+                  <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+              </swiper-item>
+          </block>
+      </swiper>
+  </view>
+  <!--nav-->
+  <view class="nav_top">
+    <block wx:for="{{navTopItems}}" wx:key="id">
+      <view class="nav_top_items {{curNavId == item.id ? 'active_'+colors[index] : ''}}" bindtap="switchTab" data-index="{{index}}" data-id="{{item.id}}">
+        <image src="{{item.icon}}" mode="aspectFill"></image>
+        <text>{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+  <!--list-->
+  <view class="nav_section">
+        <block wx:for="{{goodsList}}" wx:key="id">
+            <view class="nav_section_items" >
+                <!--image-->
+                <view class="section_image" bindtap="navigateDetail" data-aid="{{item.id}}">
+                <block wx:if="{{item.coverpath}}">
+                    <image src="{{item.coverpath}}" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" bindtap="navigateDetail" data-aid="{{item.id}}">
+                    <view class="section_cont_sub">
+                        <text>{{item.subject}}{{item.id}}</text>
+                    </view>
+                    <view class="section_cont_price">价格：{{item.price}}</view>
+                    <view>{{item.message}}</view>
+                </view>
+                <!-- book
+                <view class="section_book" bindtap="bookTap" data-book="{{item}}">
+                        <text>预约</text>
+                </view> -->
+            </view>
+            <view class="ar_cont">
+              <text class="ar_cont_h1">服务时间</text>
+              <view class="ar_date_time">
+                  <view class="ar_date">
+                      <image src="../../images/date.png"></image>
+                      <picker mode="date" placeholder="选择日期" value="{{date}}" start="2020-01-01" end="2025-01-01" bindchange="bindDateChange" >
+                          <view>
+                              {{date}}
+                          </view>
+                      </picker>
+                  </view>
+                  <view class="ar_time">
+                      <image src="../../images/time.png"></image>
+                      <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+                          <view>
+                              {{time}}
+                          </view>
+                      </picker>
+                  </view>
+              </view>
+      
+              <text class="ar_cont_h1">留言信息</text>
+      
+              <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+      
+              <button class="ar_book" bindtap="bookTap" data-book="{{item}}">确认预定</button>
+              <toast hidden="{{bookToastHidden}}"  bindchange="hideToast" >
+              预定成功
+              </toast>
+          </view>
+        </block>
+</view>
+
+</scroll-view>
+</view>

@@ -1,0 +1,22 @@
+<view class="container">
+<view class="ar_coverpath">
+    <image src="../../images/banner_02.png" mode="aspectFill"></image>
+</view>
+<view class="ar_cont">
+    <text class="ar_cont_h1">冬季酒店预约特价</text>
+    <text class="ar_cont_price">价格：¥198  </text>
+    <text>   
+        优选大床房[已消毒，安心入住]
+    </text>
+    <view class="ar_line"></view>
+    <text class="ar_cont_h1">详情描述</text>
+    <text>
+    便利设施：中央空调、WiFi、一次性拖鞋，独立卫生间
+    费用政策：到店需支付100元押金
+    停车场：免费
+    赠品：免费矿泉水、方便面、一次性牙刷等
+    </text>
+    <button class="ar_book" bindtap="bookTap">立即预定</button>
+</view>
+
+</view>

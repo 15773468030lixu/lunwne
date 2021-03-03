@@ -1,0 +1,53 @@
+<!--technician.wxml-->
+
+<view class="container">
+<scroll-view  scroll-y="true"  class="page-body" bindscrolltolower="loadMore">
+  <!--category picker-->
+  <view class="ar_picker" style="background:#fff">
+    <view class="ar_picker_wrap">
+        <picker bindchange="bindCasPickerChange" value="{{casIndex}}" range="{{casArray}}">
+            <view>
+                <text>{{casArray[casIndex]}}</text>
+            </view>
+        </picker>
+    </view>
+  </view>
+  <view class="nav_section">
+    <view wx:if="{{orderList}}">
+        <block wx:for="{{orderList}}" wx:key="id">
+            <view class="nav_section_items" bindtap="navigateDetail" data-aid="{{id}}">
+                <!--image-->
+                <view class="section_image" >
+                <block wx:if="{{item.coverpath}}">
+                    <image src="{{item.coverpath}}" mode="aspectFill"></image>
+                </block>
+                <block wx:else>
+                    <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                </block>
+                </view>
+                <!--content-->
+                <view class="section_cont" >
+                    <view class="section_cont_sub">
+                        <text>{{item.company}}</text>
+                    </view>
+                    <view class="section_cont_price" style="color:#000">{{item.nickname}}<text class="section_cont_price">  {{item.price}}</text></view>
+                    <view>{{item.message}}</view>
+                </view>
+                <!--book-->
+                <view class="section_book" >
+                        <!-- <view>{{item.distance}}</view> -->
+                </view>
+            </view>
+        </block>
+    </view>
+    
+    <view wx:else>  </view>
+
+    <view>
+        
+    </view>
+          
+</view>
+
+</scroll-view>
+</view>

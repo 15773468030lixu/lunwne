@@ -1,0 +1,37 @@
+{
+    "goods":[{
+        "id": 1,
+        "subject":"凡尔纳公寓酒店",
+        "coverpath":"../../images/recommend_img_01.png",
+        "price":198,
+        "message":"天心区五一大道717号五一新干线1楼（近太平街、地铁五一广场站）"
+    },
+    {
+        "id": 2,
+        "subject":"伯明汉青少儿英语",
+        "coverpath":"../../images/recommend_img_02.png",
+        "price":188,
+        "message":"雨花区湘府中路复地高升星光天地2楼"
+    },
+    {
+        "id": 3,
+        "subject":"温莎KTV",
+        "coverpath":"../../images/recommend_img_03.png",
+        "price":78,
+        "message":"芙蓉区五一广场黄兴中路168号（近乐和城）"
+    },
+    {
+        "id": 4,
+        "subject":"Sexybaby女子专属健身训练室",
+        "coverpath":"../../images/recommend_img_05.png",
+        "price":198,
+        "message":"岳麓区河西岳麓区奥克斯广场国际公寓B栋1534"
+    },
+    {
+        "id": 5,
+        "subject":" 魅KTV",
+        "coverpath":"../../images/recommend_img_06.png",
+        "price":98,
+        "message":"芙蓉区黄兴中路188号乐和城4楼"
+    }]
+}

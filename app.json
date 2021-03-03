@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/book/book",
+    "pages/message/message",
+    "pages/message_detail/message_detail",
+    "pages/edit_addr/edit_addr",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#363636",
+    "navigationBarTitleText": "火山预约",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#A0522D",
+    "selectedColor": "#B22222",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"static/icon/home.png",
+        "selectedIconPath":"static/icon/home-active.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "订单",
+        "iconPath":"static/icon/cart.png",
+        "selectedIconPath":"static/icon/cart-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath":"static/icon/member.png",
+        "selectedIconPath":"static/icon/member-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
