@@ -1,5 +1,4 @@
-{
-    "goods":[{
+[{
         "id": 1,
         "subject":"凡尔纳公寓酒店",
         "coverpath":"../../images/recommend_img_01.png",
@@ -34,4 +33,3 @@
         "price":98,
         "message":"芙蓉区黄兴中路188号乐和城4楼"
     }]
-}

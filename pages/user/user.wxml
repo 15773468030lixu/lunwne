@@ -1,22 +1,22 @@
 <!--user.wxml-->
-
-<view class="container">
+<view>
+<view class="container" wx:if="{{userData}}">
   <view class="user_base_info">
     <view class="user_avatar">
-        <image src="{{userData.avatar}}"></image>
+        <image src="{{userData.avatarUrl}}"></image>
     </view>
     <view class="user_info">
       <text>
-        昵称：{{userData.nickname}}
-        姓名：{{userData.name}}
-        电话：{{userData.phone}}
+        昵称：{{userData.nickName}}  
+
+        城市：{{userData.country}}
       </text>
     </view>
   </view>
 
  <view class="user_addr_manage">
     <view class="user_addr_title">【信息管理】</view>
-    <block wx:for="{{addrDate}}" wx:key="item.id">
+    <block wx:for="{{addrDate}}" wx:key="id">
       <view class="user_addr_item">
           <text class="addr_sub">{{item}}</text>
           <view class="addr_edit" bindtap="editAddr" data-addrid="{{index+1}}"></view>
@@ -26,3 +26,6 @@
  </view>
   
 </view>
+<view wx:else><navigator class="navurl" url="/pages/login/login">登录</navigator></view>
+</view>
+

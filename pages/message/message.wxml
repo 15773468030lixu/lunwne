@@ -35,7 +35,7 @@
                 </view>
                 <!--book-->
                 <view class="section_book" >
-                        <!-- <view>{{item.distance}}</view> -->
+                        <view bindtap="cancelBook" data-book="{{item._id}}">取消预约</view>
                 </view>
             </view>
         </block>

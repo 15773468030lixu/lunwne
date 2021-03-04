@@ -10,6 +10,15 @@ App({
     wx.cloud.init({
       env: "cancan-5gn9rl1yb1158325",
     });
+    // if(wx.getStorageSync('userinfo') !== null){
+    //   wx.switchTab({
+    //     url: '/pages/user/user',
+    //   })
+    // }else{
+    //   wx.switchTab({
+    //     url: '/pages/login/login',
+    //   })
+    // }
     // 把数据库初始化的实例给拿到wx.cloud.database()
     // collection('goods')把数据库的goods表给拿到
     // get查询操作
@@ -29,31 +38,34 @@ App({
     // 数据库的第二种写法es6简介写法
     // wx.cloud
     // .database()
-    // .collection("goods")
+    // .collection("goods").where({name:'苹果'})
     // .get().then((res)=>{
     //   console.log("请求成功", res);
     // }).catch((err)=>{
     //   console.log("请求失败", err);
     // })
+    //doc('b000dfidfid0ffjid')查询单条数据的，比如商品详情页
+    //add({data:{}})
+    //更新数据：.doc('id').update({data:{price:100}})
   },
-  getUserInfo: function (cb) {
-    var that = this;
-    if (this.globalData.userInfo) {
-      typeof cb == "function" && cb(this.globalData.userInfo);
-    } else {
-      //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo;
-              typeof cb == "function" && cb(that.globalData.userInfo);
-            },
-          });
-        },
-      });
-    }
-  },
+  // getUserInfo: function (cb) {
+  //   var that = this;
+  //   if (this.globalData.userInfo) {
+  //     typeof cb == "function" && cb(this.globalData.userInfo);
+  //   } else {
+  //     //调用登录接口
+  //     wx.login({
+  //       success: function () {
+  //         wx.getUserInfo({
+  //           success: function (res) {
+  //             that.globalData.userInfo = res.userInfo;
+  //             typeof cb == "function" && cb(that.globalData.userInfo);
+  //           },
+  //         });
+  //       },
+  //     });
+  //   }
+  // },
   globalData: {
     userInfo: null,
   },

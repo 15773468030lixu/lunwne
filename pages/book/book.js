@@ -46,13 +46,6 @@ Page({
     this.setData({
       bookToastHidden: false
     })
-    wx.setStorageSync('cart', [{
-      "id": 2,
-      "subject": "伯明汉青少儿英语",
-      "coverpath": "../../images/recommend_img_02.png",
-      "price": 188,
-      "message": "雨花区湘府中路复地高升星光天地2楼"
-    }])
 
     // const cart = wx.getStorageSync("cart") || []
     // console.log(typeof cart)

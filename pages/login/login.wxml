@@ -1,0 +1,2 @@
+<!--pages/login/login.wxml获取用户信息-->
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button>

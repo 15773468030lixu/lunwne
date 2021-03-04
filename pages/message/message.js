@@ -22,14 +22,46 @@ Page({
   },
 
   onLoad: function () {
-    const cart = wx.getStorageSync("cart") || []
-    cart.push(wx.getStorageSync('bookTapbookInfo'))
-    wx.setStorageSync('cart', cart)
-    console.log('8888888888888已經存在', this.data.orderList);
-    this.setData({
-      orderList: wx.getStorageSync("cart")
-    })
+    // const cart = wx.getStorageSync("cart") || []
+    // cart.push(wx.getStorageSync('bookTapbookInfo'))
+    // wx.setStorageSync('cart', cart)
+    // console.log('8888888888888已經存在', this.data.orderList);
+    // this.getCarts()
+  },
+  onShow() {
+    this.getCarts()
+  },
+  getCarts() {
+    wx.cloud
+      .database()
+      .collection("carts")
+      .get().then((res) => {
+        console.log("请求成功hhhh", res.data);
+        this.setData({
+          orderList: res.data
+        })
+        wx.setStorageSync('cart', {
+          time: Date.now(),
+          data: res.data
+        })
+      }).catch((err) => {
+        console.log("请求失败", err);
+      })
     console.log("跳转至订单页", this.data.orderList)
+
+  },
+  cancelBook(e) {
+    console.log('55555555555555555', e.currentTarget.dataset.book)
+    wx.cloud
+      .database()
+      .collection("carts").doc(e.currentTarget.dataset.book).remove()
+      .then((res) => {
+        console.log("请求成功", res);
+        this.getCarts()
+      }).catch((err) => {
+        console.log("请求失败", err);
+      })
+    console.log("取消预约", this.data.orderList)
   },
   // 跳转至详情页
   navigateDetail: function (e) {
@@ -51,6 +83,4 @@ Page({
       addrIndex: e.detail.value
     })
   }
-
-
 })

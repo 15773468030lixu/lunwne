@@ -6,7 +6,8 @@
     "pages/message/message",
     "pages/message_detail/message_detail",
     "pages/edit_addr/edit_addr",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,20 +24,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath":"static/icon/home.png",
-        "selectedIconPath":"static/icon/home-active.png"
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-active.png"
       },
       {
         "pagePath": "pages/message/message",
         "text": "订单",
-        "iconPath":"static/icon/cart.png",
-        "selectedIconPath":"static/icon/cart-active.png"
+        "iconPath": "static/icon/cart.png",
+        "selectedIconPath": "static/icon/cart-active.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath":"static/icon/member.png",
-        "selectedIconPath":"static/icon/member-active.png"
+        "iconPath": "static/icon/member.png",
+        "selectedIconPath": "static/icon/member-active.png"
       }
     ]
   },

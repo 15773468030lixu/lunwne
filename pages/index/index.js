@@ -52,22 +52,56 @@ Page({
     })
   },
   getGoods() {
-    wx.cloud
-      .database()
-      .collection("goods")
-      .get().then((res) => {
-        console.log("请求成功", res.data[0].goods);
-        this.setData({
-          goodsList: res.data[0].goods
-        })
-        wx.setStorageSync('goods', {
-          time: Date.now(),
-          data: res.data[0].goods
-        })
+    // wx.cloud
+    //   .database()
+    //   .collection("goods")
+    //   .get().then((res) => {
+    //     console.log("请求成功", res.data[0].goods);
+    //     this.setData({
+    //       goodsList: res.data[0].goods
+    //     })
+    //     wx.setStorageSync('goods', {
+    //       time: Date.now(),
+    //       data: res.data[0].goods
+    //     })
 
-      }).catch((err) => {
-        console.log("请求失败", err);
+    //   }).catch((err) => {
+    //     console.log("请求失败", err);
+    //   })
+    wx.cloud
+    .database()
+    .collection("wares")
+    .get().then((res) => {
+      console.log("请求成功hhhh", res.data);
+      this.setData({
+        goodsList: res.data
       })
+      wx.setStorageSync('goods', {
+        time: Date.now(),
+        data: res.data
+      })
+
+    }).catch((err) => {
+      console.log("请求失败", err);
+    })
+  },
+  addCarts(book){
+     wx.cloud.database()
+    .collection("carts").add({data:{
+      _id:book._id,
+      subject:book.subject,
+      coverpath:book.coverpath,
+      price:book.price,
+     message:book.message,
+     userinfo:wx.getStorageSync('userinfo')
+    }})
+    .then((res)=>{
+      console.log("请求成功", res);
+      console.log('预定成功')
+
+    }).catch((err)=>{
+      console.log("请求失败", err);
+    })
   },
   // 跳转至详情页
   navigateDetail: function (e) {
@@ -82,19 +116,32 @@ Page({
       bookToastHidden: true
     })
   },
+  loadMore: function (e) {
+        console.log('加载更多')
+        var curid = this.data.curIndex
+    
+        if (this.data.navSectionItems[curid].length === 0) return
+        
+        var that = this
+        that.data.navSectionItems[curid] = that.data.navSectionItems[curid].concat(that.data.navSectionItems[curid])
+        that.setData({
+          list: that.data.navSectionItems,
+        }) 
+      },
   bookTap: function (e) {
-    console.log('预定成功')
 
     this.setData({
       bookToastHidden: false
     })
+    // 如果bookid一样就不许报错
     const {
       book
     } = e.currentTarget.dataset
     this.setData({
       cid: book.id
     })
-    console.log('跳转至预约页', book)
+    console.log('跳转至预约页1', book)
+    this.addCarts(book)
     if (book !== null) {
       // wx.setStorageSync('bookInfo', book)
       // var newarr = [book]; //对象转为数组

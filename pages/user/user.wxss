@@ -1,4 +1,10 @@
 /**route.wxss**/
+.navurl{
+    width: 70%;
+    display: block;
+    margin: 40px 50px 0;
+
+  }
 .container{
     padding:0rpx;
     margin:0rpx;
@@ -7,19 +13,24 @@
     width:100%;
     display:flex;
     flex-direction: row;
-    justify-content: center;
-    font-size:30rpx;
+    justify-content: space-around;
+    font-size:50rpx;
     margin:80rpx 0rpx;
 }
-.user_base_info .user_avatar{
+.user_base_info .user_avatpuar{
     width:200rpx;
     height:200rpx;
-    border-radius:100%;
+    border-radius:60%;
     margin-right:60rpx;
+    vertical-align: middle;
+    margin-top: 8px;
+
 }
 .user_base_info .user_avatar image{
-    width:100%;
-    height:100%;
+    width:200rpx;
+    height:200rpx;
+    border-radius:60%;
+    vertical-align: middle;
 }
 .user_base_info .user_info{
     color:#000;
