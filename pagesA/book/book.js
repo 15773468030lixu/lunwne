@@ -1,7 +1,4 @@
 var app = getApp()
-var mydata = require('../../utils/data')
-var util = require('../../utils/util')
-var fileData = require('../../utils/data.js')
 Page({
   data: {
     addrArray: util.replacePhone(mydata.userData().addrs, true),

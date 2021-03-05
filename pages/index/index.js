@@ -53,22 +53,6 @@ Page({
     })
   },
   getGoods() {
-    // wx.cloud
-    //   .database()
-    //   .collection("goods")
-    //   .get().then((res) => {
-    //     console.log("请求成功", res.data[0].goods);
-    //     this.setData({
-    //       goodsList: res.data[0].goods
-    //     })
-    //     wx.setStorageSync('goods', {
-    //       time: Date.now(),
-    //       data: res.data[0].goods
-    //     })
-
-    //   }).catch((err) => {
-    //     console.log("请求失败", err);
-    //   })
     wx.cloud
     .database()
     .collection("wares")
@@ -117,11 +101,9 @@ Page({
         })      
       })
   },
-  // 跳转至详情页
-  navigateDetail: function (e) {
+ navigateDetail: function (e) {
     console.log('跳转至详情页', e)
     wx.navigateTo({
-      // url: '/pagesA/message_detail/message_detail?aid=' + e.currentTarget.dataset.aid
       url: '/pagesA/detail/detail?aid=' + e.currentTarget.dataset.aid
     })
   },
@@ -144,7 +126,6 @@ Page({
         }) 
       },
   bookTap: function (e) {
-    // 如果bookid一样就不许报错
     const {
       book
     } = e.currentTarget.dataset
@@ -160,7 +141,6 @@ Page({
         duration: 2000
       })
       wx.navigateTo({
-        // url: '/pagesA/message_detail/message_detail?aid=' + e.currentTarget.dataset.aid
         url: '/pagesB/face_regz/face_regz'
       })
     }else{
@@ -168,13 +148,7 @@ Page({
     }
     console.log('人脸数据',typeof wx.getStorageSync('face'),'3')
     if (book !== null) {
-      // wx.setStorageSync('bookInfo', book)
-      // var newarr = [book]; //对象转为数组
-      // var newarr = JSON.stringify(newarr); //数组转对象        
       wx.setStorageSync('bookTapbookInfo', book)
-      // wx.navigateTo({
-      //   url: '../book/book?aid=' + this.data.cid
-      // })
     }
   },
   // 日期选择
