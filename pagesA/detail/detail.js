@@ -15,7 +15,7 @@ Page( {
   },
   bookTap:function(){
     wx.navigateTo({
-      url:'../book/book?artype=' + this.data.artype
+      url:'/pagesA/book/book?artype=' + this.data.artype
     })
   }
 })

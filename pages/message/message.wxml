@@ -27,11 +27,15 @@
                 </view>
                 <!--content-->
                 <view class="section_cont" >
-                    <view class="section_cont_sub">
-                        <text>{{item.company}}</text>
-                    </view>
+                 
                     <view class="section_cont_price" style="color:#000">{{item.nickname}}<text class="section_cont_price">  {{item.price}}</text></view>
                     <view>{{item.message}}</view>
+                    <view class="section_cont_subb">
+                        <text>{{item.bookdate}} {{item.booktime}}</text>
+                    </view>
+                    <view class="section_cont_sub">
+                        <text>{{item.leavemessage|| '当前没有留言'}} </text>
+                    </view>
                 </view>
                 <!--book-->
                 <view class="section_book" >

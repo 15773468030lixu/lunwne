@@ -1,0 +1,23 @@
+/* pages/face_regz/face_regz.wxss */
+.face_regz{
+  box-sizing: border-box;
+}
+.btns-box{
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  bottom: 50px;
+  z-index: 999;
+}
+.btns-box cover-image{
+    width: 50px;
+    height: 50px;
+}
+.reChoose{
+  width: 100px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,0 +1,16 @@
+<!--pages/face_regz/face_regz.wxml-->
+<!-- <text>pages/face_regz/face_regz.wxml</text> -->
+<view class="face_regz">
+  <camera wx:if="{{src === ''}}" style="width: 100%;height:100vh" device-position="{{position}}">
+<cover-view class="btns-box">
+  <cover-image src="/images/album.png"  bindtap="choosePhoto"></cover-image>
+  <cover-image src="/images/camera.png" bindtap="takePhoto"></cover-image>
+  <cover-image src="/images/reverse.png" bindtap="reverse"></cover-image>
+</cover-view>
+</camera>
+<view wx:else >
+  <image src="{{src}}" style="width: 100%;height:100vh;display:block"></image>
+  <button type="warn" class="reChoose">重选照片</button>
+</view>
+</view>
+ 

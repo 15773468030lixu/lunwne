@@ -22,10 +22,12 @@
           <view class="addr_edit" bindtap="editAddr" data-addrid="{{index+1}}"></view>
       </view> 
     </block>
-    <navigator url="../edit_addr/edit_addr" >新增信息 +</navigator>
+    <!-- <navigator url="/pagesB/edit_addr/edit_addr" >新增信息 +</navigator> -->
+    <navigator url="/pagesB/face_regz/face_regz" >录制人脸 +</navigator>
+    <image src="{{facesrc}}" style="width: 50px;height:100px;display:block"></image>
  </view>
   
 </view>
-<view wx:else><navigator class="navurl" url="/pages/login/login">登录</navigator></view>
+<view wx:else><navigator class="navurl" url="/pagesC/login/login">登录</navigator></view>
 </view>
 

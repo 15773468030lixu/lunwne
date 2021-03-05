@@ -109,6 +109,12 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.nav_section_items .section_cont .section_cont_subb{
+    font-size: 30rpx;
+    height: 40rpx;
+    line-height:40rpx;
+    color:#000;
+}
 .nav_section_items .section_cont .section_cont_sub{
     font-size: 30rpx;
     line-height:60rpx;

@@ -1,13 +1,30 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/detail/detail",
-    "pages/book/book",
     "pages/message/message",
-    "pages/message_detail/message_detail",
-    "pages/edit_addr/edit_addr",
-    "pages/user/user",
-    "pages/login/login"
+    "pages/user/user"
+  ],
+  "subpackages": [
+    {
+      "root": "pagesA",
+      "pages": [
+        "detail/detail",
+        "book/book"
+      ]
+    },
+    {
+      "root": "pagesB",
+      "pages": [
+        "face_regz/face_regz",
+        "edit_addr/edit_addr"
+      ]
+    },
+    {
+      "root": "pagesC",
+      "pages": [
+        "login/login"
+      ]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",

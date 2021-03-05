@@ -60,17 +60,17 @@
               <view class="ar_date_time">
                   <view class="ar_date">
                       <image src="../../images/date.png"></image>
-                      <picker mode="date" placeholder="选择日期" value="{{date}}" start="2020-01-01" end="2025-01-01" bindchange="bindDateChange" >
+                      <picker mode="date" placeholder="选择日期" value="{{bookdate}}" start="2020-01-01" end="2021-10-01" bindchange="bindDateChange" >
                           <view>
-                              {{date}}
+                              {{bookdate}}
                           </view>
                       </picker>
                   </view>
                   <view class="ar_time">
                       <image src="../../images/time.png"></image>
-                      <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+                      <picker mode="time" placeholder="选择时间" value="{{booktime}}" start="01:00" end="24:00" bindchange="bindTimeChange">
                           <view>
-                              {{time}}
+                              {{booktime}}
                           </view>
                       </picker>
                   </view>
@@ -78,7 +78,7 @@
       
               <text class="ar_cont_h1">留言信息</text>
       
-              <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+              <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'" bindblur="bindblurMes"/>
       
               <button class="ar_book" bindtap="bookTap" data-book="{{item}}">确认预定</button>
               <toast hidden="{{bookToastHidden}}"  bindchange="hideToast" >
